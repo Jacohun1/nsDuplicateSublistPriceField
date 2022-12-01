@@ -1,7 +1,7 @@
 /**
  *@NApiVersion 2.1
  *@NScriptType UserEventScript
- *@Author Hunter Jacobs | Elcometer Inc.
+ *@Author Hunter Jacobs
  */
  
 // Load two standard modules.
