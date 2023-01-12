@@ -1,7 +1,7 @@
 /**
  *@NApiVersion 2.1
  *@NScriptType UserEventScript
- *@Author Hunter Jacobs
+ *@Author Hunter Jacobs | Elcometer Inc.
  */
  
 // Load two standard modules.
@@ -11,8 +11,6 @@ define ( ['N/record', 'N/ui/serverWidget'] ,
  
         // In the beforeSubmit function, add new price to Schema custom field on inv & non-inv item records.
         myBeforeSubmit = (context) => {
-            if (context.type == context.UserEventType.CREATE)
-            return;
             //Simplify Code - remove context.
             const newRecord = context.newRecord;
             const oldRecord = context.oldRecord;
@@ -22,7 +20,7 @@ define ( ['N/record', 'N/ui/serverWidget'] ,
                 sublistId: "price",
                 fieldId: 'pricelevel', //The Id of the sublist values
                 value: '5'
-            })
+            });
 
             //get the online price that is about to be submitted
             const newItemOnlinePrice = newRecord.getSublistValue({
@@ -30,6 +28,14 @@ define ( ['N/record', 'N/ui/serverWidget'] ,
                 fieldId: "price_1_",
                 line: pricingSublistLineLevel
             });
+
+            if (context.type == context.UserEventType.CREATE) {
+                newRecord.setValue({
+                    fieldId: 'custitem_onlineprice_for_schema',
+                    value: `${Number(newItemOnlinePrice).toFixed(2)}`
+                });
+                return;
+            }
 
             //get the online price that was on the record prior
             const oldItemOnlinePrice = oldRecord.getSublistValue({
