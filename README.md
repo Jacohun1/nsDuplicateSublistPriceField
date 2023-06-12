@@ -33,6 +33,7 @@ If the item record is being edited, the script first checks if the online price 
 ---
 **Disclaimer**: This script is provided as-is without any warranty. Always test scripts in a controlled environment before deploying.
 Made By:
+
  ,--.-,,-,--,             .-._        ,--.--------.    ,----.                           ,--.-,  ,---.       _,.----.     _,.---._                 ,-,--.  
 /==/  /|=|  |.--.-. .-.-./==/ \  .-._/==/,  -   , -\,-.--` , \  .-.,.---.              |==' -|.--.'  \    .' .' -   \  ,-.' , -  `.    _..---.  ,-.'-  _\ 
 |==|_ ||=|, /==/ -|/=/  ||==|, \/ /, |==\.-.  - ,-./==|-  _.-` /==/  `   \             |==|- |\==\-/\ \  /==/  ,  ,-' /==/_,  ,  - \ .' .'.-. \/==/_ ,_.' 
